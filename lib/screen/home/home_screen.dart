@@ -1,7 +1,6 @@
 import 'package:bloc_ease/bloc_ease.dart';
 import 'package:dragonball_bloc_ease/core/model/dragonball_model.dart';
 import 'package:dragonball_bloc_ease/cubit/character_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
@@ -35,18 +34,14 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12)),
                   elevation: 10,
                   child: ListTile(
-                    leading: Image.network(
-                      item?.image ?? "",
-                    ),
                     title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         LiquidGlass(
-                          glassContainsChild: true,
+                            glassContainsChild: true,
                             settings: const LiquidGlassSettings(
-                              blend: 30,
-                              thickness: 10
-                            ),
+                                blend: 30, thickness: 10),
                             shape: const LiquidRoundedSuperellipse(
                               borderRadius: Radius.circular(20),
                             ),
@@ -56,7 +51,26 @@ class HomeScreen extends StatelessWidget {
                             )),
                       ],
                     ),
-                    subtitle: Text(item?.description ?? ""),
+                    subtitle: Column(children: [
+                      const SizedBox(height: 20),
+                      Image.network(
+                        item?.image ?? "",
+                        width: 250,
+                        height: 250,
+                      ),
+                      const SizedBox(height: 10),
+                      LiquidGlass(
+                        settings: const LiquidGlassSettings(
+                          blend: 30,
+                          thickness: 10.4,
+                        ),
+                          shape: const LiquidRoundedSuperellipse(
+                            borderRadius: Radius.circular(20),
+                          ),
+                          child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Text(item?.description ?? ""))),
+                    ]),
                   ),
                 );
               }),
