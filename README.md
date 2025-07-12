@@ -31,6 +31,8 @@ A Flutter project showcasing characters from Dragonball, likely using the BLoC p
 *   [Add more features, e.g., Search functionality, Filter by saga, Favorite characters, etc.]
 *   Responsive UI that works on different screen sizes.
 *   *(If applicable)* State management implemented using the BLoC (or Cubit) pattern.
+*   Using Bloc Ease
+*   Using Liquid Glass Library for Custom UI Design
 
 ## Getting Started
 
